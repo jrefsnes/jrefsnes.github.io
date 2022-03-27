@@ -1,91 +1,144 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 <title>Premium Speed Dating</title>
 
 <style>
-button {
- appearance: none;
- background-color: #FAFBFC;
- border: 1px solid rgba(27, 31, 35, 0.15);
- border-radius: 6px;
- box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
- box-sizing: border-box;
- color: #24292E;
- cursor: pointer;
- display: inline-block;
- font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
- font-size: 14px;
- font-weight: 500;
- line-height: 20px;
- list-style: none;
- padding: 6px 16px;
- position: relative;
- transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
- user-select: none;
- -webkit-user-select: none;
- touch-action: manipulation;
- vertical-align: middle;
- white-space: nowrap;
- word-wrap: break-word;
-}
 
-button:hover {
- background-color: #F3F4F6;
- text-decoration: none;
- transition-duration: 0.1s;
-}
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        background: 0 0;
+        text-decoration: none;
+        outline: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        color: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "onum", "kern", "liga", "clig", "calt"
+    }
 
-button:disabled {
- background-color: #FAFBFC;
- border-color: rgba(27, 31, 35, 0.15);
- color: #959DA5;
- cursor: default;
-}
+    body, html {
+        width: 100%;
+        height: 100%;
+        background: #141414;
+        color: #e5e5e5;
+       font-family: 'Poppins', sans-serif;
+    }
 
-button:active {
- background-color: #EDEFF2;
- box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
- transition: none 0s;
-}
+    body {
+        display: grid;
+        grid-template-rows:1fr auto
+    }
 
-button:focus {
- outline: 1px transparent;
-}
+    main {
+        padding: 0 50px;
+        align-self: center;
+        justify-self: center;
+        text-align:center
+    }
 
-button:before {
- display: none;
-}
+    h1 {
+        font-variation-settings: 'wght' 600, 'slnt' 0;
+        font-size: 40px;
+        line-height:60px
+    }
 
-button:-webkit-details-marker {
- display: none;
-}
-  </style>
+    button {
+        font-variation-settings: 'wght' 400, 'slnt' 0;
+        border: none;
+        appearance: none;
+        font-size: 20px;
+        line-height: 30px;
+        padding: 10px 30px;
+        border-radius: 9999px;
+        background: #191919;
+        color: #999;
+        margin-top: 1em;
+        transition: color .4s ease-out, background .4s ease-out;
+        cursor:pointer
+    }
+
+    button:hover {
+        background: #00f;
+        color:#fff
+    }
+
+    footer {
+        font-variation-settings: 'wght' 500, 'slnt' 0;
+        text-align: center;
+        padding: 30px 50px;
+        font-size: 14px;
+        color:#666
+    }
+
+    a {
+        transition:color .4s ease-out
+    }
+
+    a:hover {
+        color:#fff
+    }
+
+    @media (max-width: 800px) {
+        h1 {
+            font-size: 30px;
+            line-height:50px
+        }
+
+        button {
+            font-size: 16px;
+            line-height:25px
+        }
+
+        footer {
+            font-size: 12px;
+            line-height: 30px
+        }
+    }
+    </style>
+
 </head>
 <body>
-
-<div align="center">
-<h1>Random text display using JavaScript</h1>
-<p>Click the refresh button of the browser to see another text string below.</p>
-<script type="text/javascript">
-<!--
-var r_text = new Array ();
-r_text[0] = "All the leaves are brown";
-r_text[1] = "And the sky is grey";
-r_text[2] = "I've been for a walk";
-r_text[3] = "On a winter's day";
-r_text[4] = "I'd be safe and warm";
-r_text[5] = "If I was in L.A.";
-r_text[6] = "California dreaming, On such a winter's day";
-var i = Math.floor(7*Math.random())
-document.write('<span style="color: #f00; font-weight: bold;">' + r_text[i] + '</span>');
-//-->
-</script>
-
-<button onclick="window.location.reload();">New Question</button>
-
-</div>
+    <main>
+        <h1>Should I sell this as an NFT?</h1>
+        <button>I need answers!</button>
+    </main>
+    <footer>
+        But you can 
+        <a href="https://forms.gle/3howWnBm67tnxMcS6" target="_blank">contribute to this site</a>
+         instead.
+    </footer>
+    <script>
+    let answers = ["Fuck no!", "How about no?", "Go invest in GME instead", "Let me think… no!", "Don’t you give the slightest fuck about the environment?", "You know what’s more environmentally friendly? A Non-fungible Fuck No", "Mint this! 🖕 ", "Only if you promise not to use electricity for 12 months", "Only if Elon is doing it", "Meditate on it first", "An NFT walked into a bar…", "GTFO crypto cunt!", "Go mint yourself", "Beeple bop ba bodda bope", "No, because crypto art is fake art", "You know what? This looks great — I’ll mint it as my own", "You have 0.00001% chance of making any money, so probably not", "First ask yourself, what would your God do?", "Wouldn’t you rather experience the joy of painting like Bob Ross?", "Only if you’re prepared to explode an oil tanker and leak 20,000 barrels of oil into the Caspian Sea in order to mint your NFT as a ticket of authenticity", "Who honestly gives a shit?", "Absolutely fucking not", "Could an elephant mate with a mouse? ... Exactly", "Only if we get to blame you for climate change", "No Fucking Time", "Um, no.", "...do you know what a NFT is, before thinking on it?", "Don't, even if you are selfish", "Better not tell you now", "Only if it has been blessed by 20 orc priests then used as a ceremonial tool to induce diarrhea.", "Jump of a bridge and upload it on facebook instead"],
+        questions = ["I demand a better answer", "Be more positive!", "Let me speak to the manager", "That's disappointing", "Not what I was hoping for", "But I am a serious artist", "But I have good intentions", "But it’s an original", "Who is running this joint?", "Gimme another reason", "You’re mean", "Are you sure?", "Don’t tell me that", "Can you explain why?", "But isn't crypto the future?", "I need the money", "But I am a starving artist", "Why Not?", "Rude! Next!", "Get another answer that means No", "Reply hazy try again", "Are you an NFT?", "What did you expect?", "I dare you!"],
+        button = document.querySelector("button"),
+        text = document.querySelector("h1");
+    function shuffleArray(e) {
+        for (let t = e.length - 1; t > 0; t--) {
+            const n = Math.floor(Math.random() * (t + 1));
+            [e[t], e[n]] = [e[n], e[t]]
+        }
+    }
+    button.addEventListener("click", () => {
+        shuffleArray(answers),
+        shuffleArray(questions);
+        button.innerHTML,
+        text.innerHTML;
+        text.innerHTML = answers[0],
+        button.innerHTML = questions[0]
+    });
+    </script>
 
 </body>
 </html>
+
