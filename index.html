@@ -1,2 +1,34 @@
 
-hello world
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Random text display using JavaScript</title>
+
+
+</head>
+<body>
+
+<div align="center">
+<h1>Random text display using JavaScript</h1>
+<p>Click the refresh button of the browser to see another text string below.</p>
+<script type="text/javascript">
+<!--
+var r_text = new Array ();
+r_text[0] = "All the leaves are brown";
+r_text[1] = "And the sky is grey";
+r_text[2] = "I've been for a walk";
+r_text[3] = "On a winter's day";
+r_text[4] = "I'd be safe and warm";
+r_text[5] = "If I was in L.A.";
+r_text[6] = "California dreaming, On such a winter's day";
+var i = Math.floor(7*Math.random())
+document.write('<span style="color: #f00; font-weight: bold;">' + r_text[i] + '</span>');
+//-->
+</script>
+
+<p>Note: I've put the text in red color so that i stands out - this is not required.<br />You can reload this page to get another randomly generated text string.</p>
+
+</div>
+
+</body>
+</html>
