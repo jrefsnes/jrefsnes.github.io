@@ -1,95 +1,158 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<link rel="preconnect" href="https://fonts.googleapis.com"> 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-<title>Premium Speed Dating</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <title>Premium Speed Dating</title>
 
-<style>
-
+  <style>
     * {
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-        background: 0 0;
-        text-decoration: none;
-        outline: 0;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        font-weight: inherit;
-        color: inherit;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-feature-settings: "onum", "kern", "liga", "clig", "calt"
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      background: 0 0;
+      text-decoration: none;
+      outline: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+      color: inherit;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "onum", "kern", "liga", "clig", "calt"
     }
 
-    body, html {
-        width: 100%;
-        height: 100%;
-        background: #141414;
-        color: #e5e5e5;
-       font-family: 'Poppins', sans-serif;
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      background: #141414;
+      color: #e5e5e5;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-        display: grid;
-        grid-template-rows:1fr auto
+      display: grid;
+      grid-template-rows: 1fr auto
     }
 
     main {
-        padding: 0 50px;
-        align-self: center;
-        justify-self: center;
-        text-align:center
+      padding: 0 50px;
+      align-self: center;
+      justify-self: center;
+      text-align: center
     }
 
     h1 {
-        font-size: 30px;
-        line-height:50px
+      font-size: 30px;
+      line-height: 50px
     }
 
     button {
-        border: none;
-        appearance: none;
-        font-size: 20px;
-        line-height: 30px;
-        padding: 15px 35px;
-        border-radius: 9999px;
-        background: #00f;
-        color: #fff;
-        margin-top: 2em;
-        cursor:pointer
+      border: none;
+      appearance: none;
+      font-size: 20px;
+      line-height: 30px;
+      padding: 15px 35px;
+      border-radius: 9999px;
+      background: #00f;
+      color: #fff;
+      margin-top: 2em;
+      cursor: pointer
     }
-
-    </style>
+  </style>
 
 </head>
+
 <body>
-    <main>
-        <h1>Welcome to Premium Speed Dating! Click the button below to pick a random question to ask your date.</h1>
-        <button>New question</button>
-    </main>
-    <script>
-    let questions = ["I demand a better answer", "Be more positive!", "Let me speak to the manager", "That's disappointing", "Not what I was hoping for", "But I am a serious artist", "But I have good intentions", "But it’s an original", "Who is running this joint?", "Gimme another reason", "You’re mean", "Are you sure?", "Don’t tell me that", "Can you explain why?", "But isn't crypto the future?", "I need the money", "But I am a starving artist", "Why Not?", "Rude! Next!", "Get another answer that means No", "Reply hazy try again", "Are you an NFT?", "What did you expect?", "I dare you!"],
-        button = document.querySelector("button"),
-        text = document.querySelector("h1");
+  <main>
+    <h1>Would you rather have everyone you know be able to read your thoughts or for everyone you know to have access to your Internet history?.</h1>
+    <button>New question</button>
+  </main>
+  <script>
+    let questions = [
+        "Do you think anything is too serious to be joked about?",
+        "What’s something you are really proud of accomplishing?",
+        "What does your morning routine look like when working from home?",
+        "Do you have any pets as in-house colleagues?",
+        "What’s your go-to remote work outfit?",
+        "What was your dream profession growing up?",
+        "What is something you’ve always wanted to do but haven’t done yet?",
+        "Do you have any family traditions that you look forward to each year?",
+        "Who in your life has inspired you most?",
+        "If you weren’t in this career, what could you see yourself doing?",
+        "What’s the craziest thing you have ever done?",
+        "What’s your favorite thing about your job?",
+        "When you’re not at work, what are your passions?",
+        "Do you have siblings? How many? Where do you fit in the mix?",
+        "What’s your biggest fear?",
+        "What’s your secret talent?",
+        "Do you speak any languages besides English? Is there a reason you learned it?",
+        "For what in your life do you feel most grateful?",
+        "If you could pick up a new skill in an instant what would it be?",
+        "What would you like to be known or remembered for?",
+        "What sport would you compete in if you were in the Olympics?",
+        "Do you collect anything?",
+        "What’s something you love that people wouldn’t expect?",
+        "What was the worst job you ever had?",
+        "Did you ever have an imaginary friend? If so, what was its name?",
+        "If you could say one thing to the entire world right now, what would you say?",
+        "What is the most feel-good film you’ve ever seen?",
+        "What would the title of your autobiography be?",
+        "If you could only listen to one song for the rest of your life, what would it be?",
+        "Do you watch any TV shows that you pretend you don’t watch when people ask?",
+        "If I handed you a plane ticket right now to anywhere in the world, where would you go?",
+        "What was your favorite trip you went on?",
+        "If you could live in any country, where would you live?",
+        "The zombie apocalypse is coming. Who are three people you want on your team?",
+        "If you could choose your age forever, what age would you choose and why?",
+        "What’s your cellphone or computer wallpaper and why?",
+        "If you could have an unlimited supply of one thing for the rest of your life, what would it be any why?",
+        "If you could bring back any fashion trend what would it be?",
+        "If you could get rid of any current trend, what would it be and why?",
+        "What was the first thing you thought about when you woke up this morning?",
+        "If you had to eat a crayon, what color would you choose? Why?",
+        "Would you show everyone in this room your browser history?",
+        "Have you ever pretended you didn’t see somebody to avoid talking to them?",
+        "What weird food combinations do you really enjoy?",
+        "What’s the weirdest food you’ve ever eaten?",
+        "What’s one piece of advice you wish you’d gotten sooner?",
+        "If you were a superhero what would your name be?",
+        "What’s the best piece of advice you have ever been given?",
+        "If you could be the funniest or smartest person in the room, which would you choose?",
+        "If aliens landed on earth and offered to take you with them, would you go?",
+        "What’s your most-used emoji?",
+        "If you had a time machine, would go back in time or into the future?",
+        "If you could go back in time and pay more attention in one class, what would it be?",
+        "What celebrity do you not like that everyone else loves?",
+        "Which celebrity was your childhood crush?",
+        "If you had an entrance song play every time you entered a room, what would it be?",
+        "Would you rather be on a survival reality show or dating show?",
+        "Would you rather be forced to sing along or dance to every single song you hear?",
+        "Would you rather be chronically under-dressed or overdressed?",
+        "Would you rather have everyone you know be able to read your thoughts or for everyone you know to have access to your Internet history?"      
+      ],
+      button = document.querySelector("button"),
+      text = document.querySelector("h1");
+
     function shuffleArray(e) {
-        for (let t = e.length - 1; t > 0; t--) {
-            const n = Math.floor(Math.random() * (t + 1));
-            [e[t], e[n]] = [e[n], e[t]]
-        }
+      for (let t = e.length - 1; t > 0; t--) {
+        const n = Math.floor(Math.random() * (t + 1));
+        [e[t], e[n]] = [e[n], e[t]];
+      }
     }
     button.addEventListener("click", () => {
-        shuffleArray(questions);
-        text.innerHTML;
-        text.innerHTML = questions[0];
+      shuffleArray(questions);
+      text.innerHTML;
+      text.innerHTML = questions[0];
     });
-    </script>
+</script>
 
 </body>
-</html>
 
+</html>
