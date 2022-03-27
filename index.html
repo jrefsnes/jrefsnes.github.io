@@ -53,9 +53,9 @@
       line-height: 50px
     }
   button {
-    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    background-image: linear-gradient(20deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 0;
-    border-radius: 8px;
+    border-radius: 999px;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     color: #FFFFFF;
     font-size: 24px;
@@ -63,6 +63,7 @@
     margin-top: 2em;
     padding: 15px 35px;
     text-decoration: none;
+    text-shadow: 1px -1px #333;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -98,7 +99,6 @@
         "When you’re not at work, what are your passions?",
         "Do you have siblings? How many? Where do you fit in the mix?",
         "What’s your biggest fear?",
-        /*
         "What’s your secret talent?",
         "Do you speak any languages besides your native language and English? Is there a reason you learned it?",
         "For what in your life do you feel most grateful?",
@@ -176,7 +176,6 @@
         "What are your values, and are you living according to them?",
         "What are you most favorite things about yourself?",
         "What advice would you give to yourself if you could go back 5 years in time?"
-        */
       ],
       questions = [...questions_master];
       question = document.getElementById("question"),
