@@ -79,7 +79,7 @@
 
 <body>
   <main>
-    <h1>Welcome to Premium speed dating!<br/>Click the button below to generate new questions to ask your date.</h1>
+    <h1>Welcome to Premium speed dating!<br/>Click the button below to generate questions for your date. Click <strong>New date</strong> when you move to a new date.</h1>
     <button>New question</button>
     <div><button class="date" onclick="window.location.reload();">New date</button></div>
   </main>
@@ -180,7 +180,7 @@
       button = document.querySelector("button"),
       text = document.querySelector("h1");
       button.addEventListener("click", () => {
-          text.innerHTML = questions.length > 0 ? questions.splice((Math.random() * questions.length) | 0, 1) : "No more questions left. Click New date to start over.";
+          text.innerHTML = questions.length > 0 ? questions.splice((Math.random() * questions.length) | 0, 1) : "No more questions left. Click <strong>New date</strong> to start over.";
       });
 </script>
 
