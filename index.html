@@ -52,42 +52,41 @@
       font-size: 30px;
       line-height: 50px
     }
+  button {
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 1em;
+    margin-top: 2em;
+    padding: 15px 35px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  }
 
-    button {
-      border: none;
-      appearance: none;
-      font-size: 20px;
-      line-height: 30px;
-      padding: 15px 35px;
-      border-radius: 9999px;
-      background: #00f;
-      color: #fff;
-      margin-top: 2em;
-      cursor: pointer
-    }
-    button.date {
-      font-size: 18px;
-      line-height: 20px;
-      padding: 10px 30px;
-      background: #141414;
-      color: #fff;
-      margin-top: 1em;
-    }
-  </style>
-
+  button:active,
+  button:hover {
+    outline: 0;
+  }
+</style>
 </head>
 
 <body>
   <main>
-    <h1>Welcome to Premium speed dating!<br/>Click the button below to generate questions for your date. Click <strong>New date</strong> when you move to a new date.</h1>
-    <button>New question</button>
-    <div><button class="date" onclick="window.location.reload();">New date</button></div>
+    <h1 id="text">Welcome to Premium speed dating!<br/>Click the button below to generate questions for your date.</h1>
+    <button id="question">New Question</button>
   </main>
   <script>
-    let questions = [
+    let questions_master = [
         "Do you think anything is too serious to be joked about?",
         "What’s something you are really proud of accomplishing?",
-        "What does your morning routine look like when working from home?",
+        "What does your morning routine look like when working from home?",        
         "What’s your go-to remote work outfit?",
         "What was your dream profession growing up?",
         "What is something you’ve always wanted to do but haven’t done yet?",
@@ -99,6 +98,7 @@
         "When you’re not at work, what are your passions?",
         "Do you have siblings? How many? Where do you fit in the mix?",
         "What’s your biggest fear?",
+        /*
         "What’s your secret talent?",
         "Do you speak any languages besides your native language and English? Is there a reason you learned it?",
         "For what in your life do you feel most grateful?",
@@ -176,11 +176,14 @@
         "What are your values, and are you living according to them?",
         "What are you most favorite things about yourself?",
         "What advice would you give to yourself if you could go back 5 years in time?"
+        */
       ],
-      button = document.querySelector("button"),
-      text = document.querySelector("h1");
-      button.addEventListener("click", () => {
-          text.innerHTML = questions.length > 0 ? questions.splice((Math.random() * questions.length) | 0, 1) : "No more questions left. Click <strong>New date</strong> to start over.";
+      questions = [...questions_master];
+      question = document.getElementById("question"),
+      text = document.getElementById("text");
+      question.addEventListener("click", () => {
+          text.innerHTML = questions.splice((Math.random() * questions.length) | 0, 1);
+          questions = questions.length > 0 ? questions : [...questions_master];
       });
 </script>
 
