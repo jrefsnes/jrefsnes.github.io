@@ -88,9 +88,7 @@
         <button>I need answers!</button>
     </main>
     <script>
-    let answers = ["Fuck no!", "How about no?", "Go invest in GME instead", "Let me think… no!", "Don’t you give the slightest fuck about the environment?", "You know what’s more environmentally friendly? A Non-fungible Fuck No", "Mint this! 🖕 ", "Only if you promise not to use electricity for 12 months", "Only if Elon is doing it", "Meditate on it first", "An NFT walked into a bar…", "GTFO crypto cunt!", "Go mint yourself", "Beeple bop ba bodda bope", "No, because crypto art is fake art", "You know what? This looks great — I’ll mint it as my own", "You have 0.00001% chance of making any money, so probably not", "First ask yourself, what would your God do?", "Wouldn’t you rather experience the joy of painting like Bob Ross?", "Only if you’re prepared to explode an oil tanker and leak 20,000 barrels of oil into the Caspian Sea in order to mint your NFT as a ticket of authenticity", "Who honestly gives a shit?", "Absolutely fucking not", "Could an elephant mate with a mouse? ... Exactly", "Only if we get to blame you for climate change", "No Fucking Time", "Um, no.", "...do you know what a NFT is, before thinking on it?", "Don't, even if you are selfish", "Better not tell you now", "Only if it has been blessed by 20 orc priests then used as a ceremonial tool to induce diarrhea.", "Jump of a bridge and upload it on facebook instead"],
-        questions = ["I demand a better answer", "Be more positive!", "Let me speak to the manager", "That's disappointing", "Not what I was hoping for", "But I am a serious artist", "But I have good intentions", "But it’s an original", "Who is running this joint?", "Gimme another reason", "You’re mean", "Are you sure?", "Don’t tell me that", "Can you explain why?", "But isn't crypto the future?", "I need the money", "But I am a starving artist", "Why Not?", "Rude! Next!", "Get another answer that means No", "Reply hazy try again", "Are you an NFT?", "What did you expect?", "I dare you!"],
-        button = document.querySelector("button"),
+    let questions = ["I demand a better answer", "Be more positive!", "Let me speak to the manager", "That's disappointing", "Not what I was hoping for", "But I am a serious artist", "But I have good intentions", "But it’s an original", "Who is running this joint?", "Gimme another reason", "You’re mean", "Are you sure?", "Don’t tell me that", "Can you explain why?", "But isn't crypto the future?", "I need the money", "But I am a starving artist", "Why Not?", "Rude! Next!", "Get another answer that means No", "Reply hazy try again", "Are you an NFT?", "What did you expect?", "I dare you!"],
         text = document.querySelector("h1");
     function shuffleArray(e) {
         for (let t = e.length - 1; t > 0; t--) {
@@ -99,12 +97,9 @@
         }
     }
     button.addEventListener("click", () => {
-        shuffleArray(answers),
         shuffleArray(questions);
-        button.innerHTML,
         text.innerHTML;
-        text.innerHTML = answers[0],
-        button.innerHTML = questions[0]
+        text.innerHTML = answers[0];
     });
     </script>
 
