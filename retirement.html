@@ -720,15 +720,10 @@ const targetDate = new Date('September 4, 2042 00:00:00').getTime();
 const unixTimestamp = Math.floor(targetDate / 1000);
 
   // Set up FlipDown
-  var flipdown = new FlipDown(unixTimestamp);
-
-    // Start the countdown
-    .start()
-
-    // Do something when the countdown ends
-    .ifEnded(() => {
-      console.log('The countdown has ended!');
-    });
+    
+  var flipdown = new FlipDown(unixTimestamp, {
+  theme: "dark",
+    }).start();
 
 });        
     </script>
