@@ -3,52 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to September 4th, 2042</title>
+    <title>Time left until retirement</title>
     <style>
         body {
             background-color: black;
             color: white;
             font-family: Helvetica, Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
 
-        #countdown {
-            font-size: 4rem;
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flip-card {
+            background-color: black;
+            border-radius: 10px;
+            font-size: 3rem;
+            padding: 20px;
+            color: white;
+            perspective: 1000px;
             text-align: center;
+        }
+
+        .flip-card .upper,
+        .flip-card .lower {
+            position: relative;
+            display: block;
+            width: 120px;
+            height: 100px;
+            background: #333;
+            border-radius: 10px;
+            margin: 0;
+            line-height: 100px;
+        }
+
+        .flip-card .lower {
+            transform: rotateX(180deg);
+            background-color: #444;
+            position: absolute;
+            top: 100px;
+        }
+
+        .flip-card .upper {
+            transform-origin: bottom;
+            background-color: #333;
+        }
+
+        /* Flip animation */
+        .flip-card.flip .upper {
+            animation: flipUpper 0.7s;
+        }
+
+        .flip-card.flip .lower {
+            animation: flipLower 0.7s;
+        }
+
+        @keyframes flipUpper {
+            0% {
+                transform: rotateX(0);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        @keyframes flipLower {
+            0% {
+                transform: rotateX(180deg);
+            }
+            100% {
+                transform: rotateX(0);
+            }
         }
     </style>
 </head>
 <body>
-    <div id="countdown"></div>
+    <h1>Time left until retirement</h1>
+    <div class="countdown">
+        <div id="days" class="flip-card">
+            <div class="upper">00</div>
+            <div class="lower">00</div>
+        </div>
+        <div id="hours" class="flip-card">
+            <div class="upper">00</div>
+            <div class="lower">00</div>
+        </div>
+        <div id="minutes" class="flip-card">
+            <div class="upper">00</div>
+            <div class="lower">00</div>
+        </div>
+        <div id="seconds" class="flip-card">
+            <div class="upper">00</div>
+            <div class="lower">00</div>
+        </div>
+    </div>
 
     <script>
-        // Set the target date
         const targetDate = new Date('September 4, 2042 00:00:00').getTime();
 
-        // Update the countdown every second
-        const countdownInterval = setInterval(() => {
+        function updateCountdown() {
             const now = new Date().getTime();
             const timeLeft = targetDate - now;
 
-            // Calculate days, hours, minutes, and seconds
             const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
             const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            // Display the result in the countdown div
-            document.getElementById('countdown').innerHTML = `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds left`;
+            flipCard('days', days);
+            flipCard('hours', hours);
+            flipCard('minutes', minutes);
+            flipCard('seconds', seconds);
 
-            // If the countdown is finished
             if (timeLeft < 0) {
                 clearInterval(countdownInterval);
-                document.getElementById('countdown').innerHTML = "EXPIRED";
+                document.querySelector(".countdown").innerHTML = "EXPIRED";
             }
-        }, 1000);
+        }
+
+        function flipCard(id, newValue) {
+            const card = document.getElementById(id);
+            const upper = card.querySelector('.upper');
+            const lower = card.querySelector('.lower');
+            const currentValue = upper.innerText;
+
+            if (currentValue !== String(newValue).padStart(2, '0')) {
+                upper.innerText = String(newValue).padStart(2, '0');
+                lower.innerText = String(newValue).padStart(2, '0');
+                card.classList.add('flip');
+
+                setTimeout(() => {
+                    card.classList.remove('flip');
+                }, 700); // Duration of the flip animation
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
